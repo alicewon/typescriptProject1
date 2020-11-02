@@ -1,4 +1,2 @@
 # typescriptProject1
-testing
-
-testing again
+TypeScript 1 Course - LevelUpTuts

@@ -21,4 +21,12 @@ const tablet: any = 3
 // undefined
 // null
 
+// Functions in TS
+
+const sayWord = (word: string) :string => {
+    console.log(word)
+    return word
+}
+
+sayWord("Alice")
 
