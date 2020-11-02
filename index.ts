@@ -70,4 +70,27 @@ dog = undefined
 // dog = false
 
 
-//Interface
+// Interface (similar to GraphQL) - allows to check for object shape, or named params
+// Replacement for named parameters
+interface Person {
+    name?: string,
+    age: number
+}
+
+const sayName = ({name, age}: Person): string => {
+    console.log(name, age)
+    return name
+}
+
+// sayName({
+//     name: "Alice", 
+//     age: 32
+// })
+
+sayName({
+    age: 32,
+    // name: "Alice", 
+})
+// order of params matters when not using an interface. Once interface is defined, you don't need to specify order
+
+

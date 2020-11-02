@@ -165,9 +165,20 @@ dog = null;
 console.log(dog);
 dog = "Lucy";
 dog = undefined;
-// dog = 10
-// dog = false
-//Interface
+var sayName = function sayName(_a) {
+    var name = _a.name,
+        age = _a.age;
+    console.log(name, age);
+    return name;
+};
+// sayName({
+//     name: "Alice", 
+//     age: 32
+// })
+sayName({
+    age: 32
+});
+// order of params matters when not using an interface. Once interface is defined, you don't need to specify order
 },{}],4:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
