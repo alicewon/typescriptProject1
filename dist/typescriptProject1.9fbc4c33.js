@@ -103,7 +103,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({4:[function(require,module,exports) {
+})({2:[function(require,module,exports) {
 var isOpen = false;
 var myName = 'alice';
 var age = 30;
@@ -125,12 +125,50 @@ var tablet = 3;
 // undefined
 // null
 // Functions in TS
+// ? for optional params
+// const sayWord = (word?: string) :string => {
+//     console.log(word || "Hello")
+//     return word || "Hello"
+// }
+// sayWord()
+// default params
+// Rest params work as expected
 var sayWord = function sayWord(word) {
-    console.log(word);
+    if (word === void 0) {
+        word = "Hello";
+    }
+    var otherStuff = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        otherStuff[_i - 1] = arguments[_i];
+    }
+    console.log(otherStuff);
     return word;
 };
-sayWord("Alice");
-},{}],3:[function(require,module,exports) {
+sayWord("Scott", "Wes");
+// Implicit types in TS
+var newName = 'Scott';
+newName = "Wes";
+// newName = 10
+// newName = false
+console.log(newName);
+// Inferring type from a variable, from INITIAL declaration, not the current value
+var newNameTwo = newName;
+// newNameTwo = 11
+// Union Types with |
+var makeMargin = function makeMargin(x) {
+    return "margin: " + x + "px";
+};
+makeMargin(10);
+//Null and Undefined types
+var dog = "sammy";
+dog = null;
+console.log(dog);
+dog = "Lucy";
+dog = undefined;
+// dog = 10
+// dog = false
+//Interface
+},{}],4:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -159,7 +197,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57438' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61608' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -300,5 +338,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[3,4], null)
+},{}]},{},[4,2], null)
 //# sourceMappingURL=/typescriptProject1.9fbc4c33.map

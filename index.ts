@@ -22,11 +22,52 @@ const tablet: any = 3
 // null
 
 // Functions in TS
+// ? for optional params
+// const sayWord = (word?: string) :string => {
+//     console.log(word || "Hello")
+//     return word || "Hello"
+// }
 
-const sayWord = (word: string) :string => {
-    console.log(word)
+// sayWord()
+
+
+// default params
+// Rest params work as expected
+const sayWord = (word = "Hello", ...otherStuff: string[]) :string => {
+    console.log(otherStuff)
     return word
 }
 
-sayWord("Alice")
+sayWord("Scott", "Wes")
 
+// Implicit types in TS
+let newName: string | number | boolean = 'Scott' 
+newName = "Wes"
+// newName = 10
+// newName = false
+console.log(newName)
+
+// Inferring type from a variable, from INITIAL declaration, not the current value
+let newNameTwo = newName 
+// newNameTwo = 11
+
+// Union Types with |
+const makeMargin = (x: string | number): string => {
+    return `margin: ${x}px`;
+}
+
+makeMargin(10)
+
+
+//Null and Undefined types
+
+let dog: string = "sammy"
+dog = null
+console.log(dog)
+dog = "Lucy"
+dog = undefined
+// dog = 10
+// dog = false
+
+
+//Interface
