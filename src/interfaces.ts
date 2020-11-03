@@ -1,6 +1,6 @@
 export interface Person {
-    name?: string, // optional param (?)
-    age: number
+    name: string, // optional param (?)
+    age?: number
 }
 
 enum Job { 

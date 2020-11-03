@@ -147,3 +147,17 @@ const outputInput = <T>(arg: T): T => {
 
 const output: string = outputInput("hi")
 outputInput(3)
+
+// Duck Typing
+class Dancer implements Person {
+    age: number
+    name: string
+}
+
+let ElNino: Person = new Dancer()
+
+const fake = {
+    name: "Scott"
+}
+
+ElNino = fake //able to do this bc shape is the same as interface

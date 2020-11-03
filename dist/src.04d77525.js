@@ -216,6 +216,15 @@ var outputInput = function outputInput(arg) {
 };
 var output = outputInput("hi");
 outputInput(3);
+var Dancer = function () {
+    function Dancer() {}
+    return Dancer;
+}();
+var ElNino = new Dancer();
+var fake = {
+    name: "Scott"
+};
+ElNino = fake;
 },{"./interfaces":7}],10:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
