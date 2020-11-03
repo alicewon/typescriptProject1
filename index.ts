@@ -1,3 +1,5 @@
+import Job, {Person, Type2} from './src/interfaces'
+
 const isOpen: boolean = false
 
 const myName: string = 'alice'
@@ -10,7 +12,7 @@ const list: number[] = [0,1,2,3]
 const me: [string, number] = ["Alice", 30]
 
 // enum
-enum Job { WebDev, WebDesigner, PM }
+// enum Job { WebDev, WebDesigner, PM }
 const job: Job = Job.WebDev
 
 // any
@@ -72,10 +74,10 @@ dog = undefined
 
 // Interface (similar to GraphQL) - allows to check for object shape, or named params
 // Replacement for named parameters
-interface Person {
-    name?: string, // optional param (?)
-    age: number
-}
+// interface Person {
+//     name?: string, // optional param (?)
+//     age: number
+// }
 
 const sayName = ({name, age}: Person): string => {
     console.log(name, age)
@@ -108,11 +110,11 @@ printLable(myObj)
 
 //Enumzzz - define a set of named constants, list of exact items
 
-enum Type2 {
-    Video = "VIDEO", // 0 default unless declared
-    BlogPost = "BLOG_POST", // 1
-    Quiz = "QUIZ" // 2
-}
+// enum Type2 {
+//     Video = "VIDEO", // 0 default unless declared
+//     BlogPost = "BLOG_POST", // 1
+//     Quiz = "QUIZ" // 2
+// }
 
 const createContent2 = (contentType: Type2) => {}
 createContent2(Type2.Video)
@@ -137,4 +139,5 @@ class Team {
 const redWings = new Team('Red Wings')
 redWings.score()
 redWings.teamName
+
 

@@ -103,7 +103,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({2:[function(require,module,exports) {
+})({12:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Type2 = void 0;
+var Job;
+(function (Job) {
+    Job[Job["WebDev"] = 0] = "WebDev";
+    Job[Job["WebDesigner"] = 1] = "WebDesigner";
+    Job[Job["PM"] = 2] = "PM";
+})(Job || (Job = {}));
+exports.default = Job;
+var Type2;
+(function (Type2) {
+    Type2["Video"] = "VIDEO";
+    Type2["BlogPost"] = "BLOG_POST";
+    Type2["Quiz"] = "QUIZ"; // 2
+})(Type2 = exports.Type2 || (exports.Type2 = {}));
+},{}],2:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var interfaces_1 = require("./src/interfaces");
 var isOpen = false;
 var myName = 'alice';
 var age = 30;
@@ -111,13 +133,8 @@ var list = [0, 1, 2, 3];
 // tuple: has to follow order of types declared
 var me = ["Alice", 30];
 // enum
-var Job;
-(function (Job) {
-    Job[Job["WebDev"] = 0] = "WebDev";
-    Job[Job["WebDesigner"] = 1] = "WebDesigner";
-    Job[Job["PM"] = 2] = "PM";
-})(Job || (Job = {}));
-var job = Job.WebDev;
+// enum Job { WebDev, WebDesigner, PM }
+var job = interfaces_1.default.WebDev;
 // any
 var phone = "Pixel";
 var tablet = 3;
@@ -165,6 +182,14 @@ dog = null;
 console.log(dog);
 dog = "Lucy";
 dog = undefined;
+// dog = 10
+// dog = false
+// Interface (similar to GraphQL) - allows to check for object shape, or named params
+// Replacement for named parameters
+// interface Person {
+//     name?: string, // optional param (?)
+//     age: number
+// }
 var sayName = function sayName(_a) {
     var name = _a.name,
         age = _a.age;
@@ -184,15 +209,14 @@ function printLable(labeledObj) {
 var myObj = { size: 10, label: "Size 10 Object" };
 printLable(myObj);
 //Enumzzz - define a set of named constants, list of exact items
-var Type2;
-(function (Type2) {
-    Type2["Video"] = "VIDEO";
-    Type2["BlogPost"] = "BLOG_POST";
-    Type2["Quiz"] = "QUIZ"; // 2
-})(Type2 || (Type2 = {}));
+// enum Type2 {
+//     Video = "VIDEO", // 0 default unless declared
+//     BlogPost = "BLOG_POST", // 1
+//     Quiz = "QUIZ" // 2
+// }
 var createContent2 = function createContent2(contentType) {};
-createContent2(Type2.Video);
-console.log(Type2.Quiz);
+createContent2(interfaces_1.Type2.Video);
+console.log(interfaces_1.Type2.Quiz);
 // Classes
 var Team = /** @class */function () {
     //    public teamName: string
@@ -208,7 +232,7 @@ var Team = /** @class */function () {
 var redWings = new Team('Red Wings');
 redWings.score();
 redWings.teamName;
-},{}],4:[function(require,module,exports) {
+},{"./src/interfaces":12}],4:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
