@@ -114,11 +114,27 @@ enum Type2 {
     Quiz = "QUIZ" // 2
 }
 
-const createContent2 = (contentType: Type) => {}
+const createContent2 = (contentType: Type2) => {}
 createContent2(Type2.Video)
 console.log(Type2.Quiz)
 
 
+// Classes
 
+class Team {
+   readonly teamName: string //readonly - prevents from being changed
+//    public teamName: string
 
+    constructor(teamName) {
+        this.teamName = teamName
+    }
+    score(): string {
+        console.log(this.teamName)
+        return "goal!"
+    }
+}
+
+const redWings = new Team('Red Wings')
+redWings.score()
+redWings.teamName
 
