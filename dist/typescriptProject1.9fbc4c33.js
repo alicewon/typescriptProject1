@@ -178,7 +178,21 @@ var sayName = function sayName(_a) {
 sayName({
     age: 32
 });
-// order of params matters when not using an interface. Once interface is defined, you don't need to specify order
+function printLable(labeledObj) {
+    console.log(labeledObj.label);
+}
+var myObj = { size: 10, label: "Size 10 Object" };
+printLable(myObj);
+//Enumzzz - define a set of named constants, list of exact items
+var Type2;
+(function (Type2) {
+    Type2["Video"] = "VIDEO";
+    Type2["BlogPost"] = "BLOG_POST";
+    Type2["Quiz"] = "QUIZ"; // 2
+})(Type2 || (Type2 = {}));
+var createContent2 = function createContent2(contentType) {};
+createContent2(Type2.Video);
+console.log(Type2.Quiz);
 },{}],4:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

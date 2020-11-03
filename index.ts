@@ -73,7 +73,7 @@ dog = undefined
 // Interface (similar to GraphQL) - allows to check for object shape, or named params
 // Replacement for named parameters
 interface Person {
-    name?: string,
+    name?: string, // optional param (?)
     age: number
 }
 
@@ -92,5 +92,33 @@ sayName({
     // name: "Alice", 
 })
 // order of params matters when not using an interface. Once interface is defined, you don't need to specify order
+
+//TS Docs example:
+interface LabeledValue {
+    label: string
+}
+
+function printLable(labeledObj: LabeledValue){
+    console.log(labeledObj.label)
+}
+
+let myObj = {size: 10, label: "Size 10 Object"}
+
+printLable(myObj)
+
+//Enumzzz - define a set of named constants, list of exact items
+
+enum Type2 {
+    Video = "VIDEO", // 0 default unless declared
+    BlogPost = "BLOG_POST", // 1
+    Quiz = "QUIZ" // 2
+}
+
+const createContent2 = (contentType: Type) => {}
+createContent2(Type2.Video)
+console.log(Type2.Quiz)
+
+
+
 
 
